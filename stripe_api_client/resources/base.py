@@ -30,7 +30,7 @@ class ListableResource:
 class UpdatableResource:
     def update_item(self, code, item, params=None):
         url = urljoin(self._endpoint, code)
-        res = self._session.put(url, data=item, params=params)
+        res = self._session.post(url, data=item, params=params)
         return res
 
 class DeletableResource:
@@ -38,3 +38,17 @@ class DeletableResource:
         url = urljoin(self._endpoint, code)
         res = self._session.delete(url, params=params)
         return res
+    
+# Pools
+
+class ActionPool(
+    ResourcePool,
+    CreatableResource
+):
+    pass
+
+class QueryPool(
+    ResourcePool,
+    ListableResource
+):
+    pass
