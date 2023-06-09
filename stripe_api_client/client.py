@@ -64,4 +64,8 @@ class Client:
     
     @property
     def invoices(self):
-        return self._resources['invoices']       
+        return self._resources['invoices']  
+
+    @property
+    def subscriptions(self):
+        return self._resources['subscriptions']           
