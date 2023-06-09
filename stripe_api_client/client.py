@@ -30,6 +30,15 @@ class Client:
             'payment_methods': resources.PaymentMethodsPool(
                 urljoin(self._base_url, 'payment_methods'), self._session
             ),
+            'payment_intents': resources.PaymentIntentsPool(
+                urljoin(self._base_url, 'payment_intents'), self._session
+            ),
+            'invoices': resources.InvoicesPool(
+                urljoin(self._base_url, 'invoices'), self._session
+            ),
+            'subscriptions': resources.SubscriptionsPool(
+                urljoin(self._base_url, 'subscriptions'), self._session
+            )
         }
 
 
@@ -48,4 +57,11 @@ class Client:
     @property
     def payment_methods(self):
         return self._resources['payment_methods']        
+
+    @property
+    def payment_intents(self):
+        return self._resources['payment_intents']   
     
+    @property
+    def invoices(self):
+        return self._resources['invoices']       
