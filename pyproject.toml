@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stripe-api-client"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Steven Athouel <sathouel@gmail.com>"]
 readme = "README.md"
